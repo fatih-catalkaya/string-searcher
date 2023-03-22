@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="parentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane collapsible="false" layoutX="8.0" layoutY="45.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" text="Search" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0">
+               <children>
+                  <GridPane hgap="5.0" layoutX="80.0" layoutY="147.0" vgap="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="163.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.00000762939453" minWidth="10.0" prefWidth="302.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="String to search" />
+                        <Label text="No. CPUs to use" GridPane.rowIndex="1" />
+                        <Label text="Current Status" GridPane.rowIndex="2" />
+                        <Label text="Runtime" GridPane.rowIndex="3" />
+                        <Button fx:id="btnStartSearch" minWidth="470.0" mnemonicParsing="false" text="Start search" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="btnStopSearch" disable="true" minWidth="470.0" mnemonicParsing="false" prefWidth="460.0" text="Stop search" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                        <TextField fx:id="tfSearchString" minWidth="300.0" prefWidth="300.0" GridPane.columnIndex="1" />
+                        <Spinner fx:id="spinnerNoThreads" minWidth="252.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                        <Label fx:id="labelAppRunning" style="-fx-text-fill: red" text="STOPPED" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="labelRuntime" text="00:00:00" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="File to scan" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfScanFile" editable="false" minWidth="300.0" prefWidth="300.0" text="Click to select file" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane collapsible="false" layoutX="278.0" layoutY="89.0" prefHeight="200.0" prefWidth="200.0" text="Results" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <ListView fx:id="resultList" prefHeight="200.0" prefWidth="200.0" />
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
